@@ -1,5 +1,5 @@
-from security.authentication.helpers.email_helper import EmailHelper
-from security.authentication.helpers.password_helper import PasswordHelper
+from security.helpers.auth_helpers.email_helper import EmailHelper
+from security.helpers.auth_helpers.password_helper import PasswordHelper
 from security.config.db_config.db_config import DbConfig
 from security.models.user import User
 
