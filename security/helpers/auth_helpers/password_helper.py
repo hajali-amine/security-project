@@ -1,6 +1,8 @@
 import re
 import hashlib
 
+from security.hashing.hash import Hash
+
 
 class PasswordHelper:
     test = True
@@ -18,4 +20,4 @@ class PasswordHelper:
 
     @staticmethod
     def hash(pwd):
-        return hashlib.sha224(pwd.encode('utf-8')).hexdigest()
+        return Hash.sha256(pwd)

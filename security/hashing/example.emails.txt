@@ -1,2 +1,5 @@
 generate an email list following this regex:
 [a-z]{6}\.[a-z]{5}@insat\.ucar\.tn
+
+Or you can use the following crunch command on Kali Linux:
+crunch 26 26 -t @@@@@@.@@@@@@insat.ucar.tn -l aaaaaa.aaaaa@insat.ucar.tn -s aaaaaa.aaaaa@insat.ucar.tn -o emails.txt -c 20000

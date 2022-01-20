@@ -1,12 +1,24 @@
+import os
+
+from dotenv import load_dotenv
+
+
 from security.authentication.sign_in.sign_in import SignIn
 from security.authentication.sign_up.sign_up import SignUp
+from security.config.email_config.email_config import EmailConfig
 from security.menu.asymmetric_encryption_menu import AsymmetricEncryptionMenu
 from security.menu.crack_hash_menu import CrackHashMenu
 from security.menu.encoding_menu import EncodingMenu
 from security.menu.hash_menu import HashMenu
 from security.menu.symmetric_encryption_menu import SymmetricEncryptionMenu
 
+
+load_dotenv(".env")
 if __name__ == '__main__':
+    EmailConfig.setup(
+        sender_email=os.environ.get("EMAIL_LOGIN"),
+        sender_password=os.environ.get("EMAIL_PASSWORD")
+    )
     user = None
 
     while user is None:

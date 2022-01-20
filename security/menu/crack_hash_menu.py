@@ -37,6 +37,6 @@ class CrackHashMenu(GenericMenu):
             option_func = switcher.get(option, "Invalid option")
 
             hashed_pwd = option_func(pwd)
-            result_pwd = HashCracker.crack_hash(hashed_pwd, option_func, "/security/hashing/emails.txt")
+            result_pwd = HashCracker.crack_hash(hashed_pwd, option_func, "security/hashing/emails.txt")
 
             print("the password is {}".format(result_pwd))

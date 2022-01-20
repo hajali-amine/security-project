@@ -1,4 +1,5 @@
 import re
+from random import randint
 
 
 class EmailHelper:
@@ -10,3 +11,8 @@ class EmailHelper:
             return False
         else:
             return True
+
+    @staticmethod
+    def generate_random_code():
+        return randint(1000, 9999)
+
