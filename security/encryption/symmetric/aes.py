@@ -1,9 +1,10 @@
 from Crypto.Cipher import AES
 
+from security.encryption.generic.generic_symmetric import GenericSymmetric
 from security.helpers.encryption_helpers.encryption_helper import EncryptionHelper
 
 
-class AdvancedEncryptionStandard:
+class AdvancedEncryptionStandard(GenericSymmetric):
     # The key has to be of size 16
     key = "defaultkdefaultk"
 

@@ -1,9 +1,10 @@
 from Crypto.Cipher import DES
 
+from security.encryption.generic.generic_symmetric import GenericSymmetric
 from security.helpers.encryption_helpers.encryption_helper import EncryptionHelper
 
 
-class DataEncryptionStandard:
+class DataEncryptionStandard(GenericSymmetric):
     # The key has to be of size 8
     key = "defaultk"
 

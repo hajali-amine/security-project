@@ -1,11 +1,7 @@
-from jedi.inference.gradual.base import GenericClass
-
 from security.authentication.sign_in.sign_in import SignIn
 from security.authentication.sign_up.sign_up import SignUp
-from security.encoding.encode import Encode
-from security.encryption.asymmetric.rsa import RSA
-from security.encryption.symmetric.des import DataEncryptionStandard
-from security.hashing.hash import Hash
+from security.menu.asymmetric_encryption_menu import AsymmetricEncryptionMenu
+from security.menu.crack_hash_menu import CrackHashMenu
 from security.menu.encoding_menu import EncodingMenu
 from security.menu.hash_menu import HashMenu
 from security.menu.symmetric_encryption_menu import SymmetricEncryptionMenu
@@ -35,6 +31,7 @@ if __name__ == '__main__':
               "2 - Hash a message\n"
               "3 - Crack a hash\n"
               "41 - Encrypt a message symmetrically\n"
+              "42 - Encrypt a message asymmetrically\n"
               "0 - Logout")
 
         option = int(input("Option: "))
@@ -45,7 +42,9 @@ if __name__ == '__main__':
         switcher = {
             1: EncodingMenu,
             2: HashMenu,
+            3: CrackHashMenu,
             41: SymmetricEncryptionMenu,
+            42: AsymmetricEncryptionMenu,
         }
 
         option_menu = switcher.get(option, "Invalid option")

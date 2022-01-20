@@ -1,27 +1,30 @@
-import rsa
+from security.encryption.generic.generic_asymmetric import GenericAsymmetric
+from security.modules.elgamal import elgamal
 
 
-class RSA:
+class ElGamal(GenericAsymmetric):
     # The key has to be of size 16
     private_key = None
     public_key = None
 
     @staticmethod
     def get_name():
-        return "RSA"
+        return "ElGamal"
 
     @staticmethod
-    def set_key():
-        RSA.public_key, RSA.private_key = rsa.newkeys(512)
+    def set_keys():
+        elgamal_keys = elgamal.generate_keys(128)
+        ElGamal.public_key = elgamal_keys["publicKey"]
+        ElGamal.private_key = elgamal_keys["privateKey"]
 
     @staticmethod
     def encrypt(msg, pub_key):
-        return rsa.encrypt(msg.encode(), pub_key).hex()
+        return elgamal.encrypt(pub_key, msg)
 
     @staticmethod
     def decrypt(msg):
-        return rsa.decrypt(msg.encode(), RSA.private_key).hex()
+        return elgamal.decrypt(ElGamal.private_key, msg)
 
     @staticmethod
     def get_pub_key():
-        return RSA.public_key
+        return ElGamal.public_key

@@ -1,3 +1,6 @@
 [submodule "elgamal"]
 	path = security/modules/elgamal
 	url = https://github.com/RyanRiddle/elgamal.git
+[submodule "security/modules/elgamal"]
+	path = security/modules/elgamal
+	url = https://github.com/RyanRiddle/elgamal.git
