@@ -1,3 +1,4 @@
 .idea
+*pycache*
 security/hashing/emails.txt
 *chat*
